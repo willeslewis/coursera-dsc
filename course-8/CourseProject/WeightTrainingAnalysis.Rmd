@@ -1,14 +1,12 @@
 ---
 title: "Weight Training Analysis"
 output:
-  pdf_document: default
   html_document:
-    keep_md: yes
-    fig_caption: yes
+    keep_md: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, results='asis',dev='pdf',cache=TRUE)
+knitr::opts_chunk$set(echo = FALSE, results='asis',cache=TRUE)
 #knitr::opts_chunk$set(dev = 'pdf')
 options(xtable.type = 'html')
 ```
