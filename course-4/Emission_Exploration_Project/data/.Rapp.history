@@ -1,0 +1,3 @@
+load("/Users/William/Desktop/Desktop/Projects/coursera-dsc/course-4/Emission_Exploration_Project/data/summarySCC_PM25.rds")
+load("/Users/William/Desktop/Desktop/Projects/coursera-dsc/course-4/Emission_Exploration_Project/data/Source_Classification_Code.rds")
+load("/Users/William/Desktop/Desktop/Projects/coursera-dsc/course-4/Emission_Exploration_Project/data/Source_Classification_Code.rds")
