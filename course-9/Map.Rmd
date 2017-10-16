@@ -1,0 +1,21 @@
+---
+title: "Map of most 10 popular travel destinations in 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+###Created on `r date()`
+
+```{r map, echo=FALSE}
+library(leaflet)
+Travel_sites<-c("<a href='https://travel.usnews.com/Istanbul_Turkey/Things_To_Do/'> 13 Things to do in  Istanbul</a>","<a href='https://homeiswhereyourbagis.com/en/15-things-you-should-experience-in-kuala-lumpur/'> 15 Things to do in  Kuala Lumpur</a>","<a href='https://www.tripadvisor.com/Travel_Guide-g60763-New_York_City_New_York.html'> New York City Travel Guides</a>","<a href='https://www.tripadvisor.com/Travel_Guide-g294197-Seoul.html'> Seoul Travel Guides</a>","<a href='https://www.tripadvisor.com/Tourism-g298184-Tokyo_Tokyo_Prefecture_Kanto-Vacations.html'> Tokyo Travel Guides</a>","<a href='https://www.tripadvisor.com/Travel_Guide-g294265-Singapore.html'> Singapore Travel Guides</a>","<a href='https://www.tripadvisor.com/Travel_Guide-g295424-Dubai_Emirate_of_Dubai.html'> Dubai Travel Guides</a>","<a href='https://www.tripadvisor.com/Travel_Guide-g187147-Paris_Ile_de_France.html'> Paris Travel Guides</a>","<a href='https://www.tripadvisor.com/Travel_Guide-g186338-London_England.html'> London Travel Guides</a>","<a href='https://www.tripadvisor.com/Travel_Guide-g293916-Bangkok.html'> Bangkok Travel Guides</a>")
+
+df<-data.frame(name=c('Istanbul','Kuala Lumpur','New York City','Seoul','Tokyo','Singapore','Dubai','Paris','London','Bangkok'),visitors=c(9.24,12.08,12.36,12.44,12.51,13.45,16.01,16.13,20.01,20.19),lat=c(41.0082,3.1390,40.7128,37.5665,35.6895,1.3521,25.2048,48.8566,51.5074,13.7563),lng=c(28.9784,101.6869,-74.0060,126.9780,139.6917,103.8198,55.2708,2.3522,-0.1278,100.5018))
+
+df<-leaflet() %>% addTiles() %>% addCircles(weight=1,radius=(df$visitors*10^4),lat=df$lat,lng=df$lng,popup=Travel_sites) 
+
+df
+```
